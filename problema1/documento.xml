@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gastos>
+    <gasto>
+        <id>1</id>
+        <folio>20170216</folio>
+        <fecha>2017/02/16</fecha>
+        <rut>76541729-5</rut>
+        <id_tipo></id_tipo>
+        <iva>1900</iva>
+        <neto>10000</neto>
+        <retencion></retencion>
+        <excento></excento>
+        <otrosexcento></otrosexcento>
+        <total>11900</total>
+        <creacion>2017-02-09 00:06:53</creacion>
+    </gasto>
+    <gasto>
+        <id>2</id>
+        <folio>20160216</folio>
+        <fecha>2016/02/16</fecha>
+        <rut>76541234-5</rut>
+        <id_tipo></id_tipo>
+        <iva></iva>
+        <neto>10000</neto>
+        <retencion></retencion>
+        <excento>1000</excento>
+        <otrosexcento>10000</otrosexcento>
+        <total>11000</total>
+        <creacion>2016-02-09 00:06:53</creacion>
+    </gasto>
+    <gasto>
+        <id>3</id>
+        <folio>20130216</folio>
+        <fecha>2013/02/16</fecha>
+        <rut>77641729-5</rut>
+        <id_tipo></id_tipo>
+        <iva></iva>
+        <neto>10000</neto>
+        <retencion>1000</retencion>
+        <excento></excento>
+        <otrosexcento></otrosexcento>
+        <total>9000</total>
+        <creacion>2013-02-09 00:06:53</creacion>
+    </gasto>
+</gastos>
