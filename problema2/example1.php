@@ -45,7 +45,7 @@ echo '<h4>PROBLEMA 2: BUSCAR DATOS</h4>';
 /****************************************************************************************************************/
 echo '  Requerimiento 1:';
 $dias_dormidos = array();
-$dormir = 0;
+
 $decharme = 0;
 $desayunar = 0;
 $viajar = 0;
@@ -56,6 +56,7 @@ $leer = 0;
 $reuniones = 'false';
 
 for($i=1; $i<count($php_1); $i++) {
+  $dormir = 0;
   foreach ($php_1[$i] as $key => $value) {
     if($value == "dormir"){
       $dormir++;
