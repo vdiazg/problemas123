@@ -1,4 +1,5 @@
 <?php
+
 $php_1[1] = array(1=>'dormir',2=>'dormir',3=>'dormir',4=>'dormir',5=>'dormir',6=>'ducharme',7=>'desayunar',8=>'viajar',9=>'trabajar',10=>'trabajar',11=>'trabajar',12=>'trabajar',13=>'trabajar',14=>'comer',15=>'trabajar',16=>'trabajar',17=>'trabajar',18=>'trabajar',19=>'viajar',20=>'ejercitar',21=>'jugar',22=>'jugar',23=>'leer',24=>'dormir');
 $php_1[2] = array(1=>'dormir',2=>'dormir',3=>'dormir',4=>'dormir',5=>'ducharme',6=>'desayunar',7=>'viajar',8=>'trabajar',9=>'trabajar',10=>'trabajar',11=>'trabajar',12=>'trabajar',13=>'trabajar',14=>'comer',15=>'trabajar',16=>'trabajar',17=>'trabajar',18=>'trabajar',19=>'viajar',20=>'ejercitar',21=>'ejercitar',22=>'ejercitar',23=>'dormir',24=>'dormir');
 $php_1[3] = array(1=>'dormir',2=>'dormir',3=>'dormir',4=>'dormir',5=>'dormir',6=>'ducharme',7=>'desayunar',8=>'viajar',9=>'trabajar',10=>'trabajar',11=>'trabajar',12=>'trabajar',13=>'trabajar',14=>'comer',15=>'trabajar',16=>'trabajar',17=>'trabajar',18=>'trabajar',19=>'viajar',20=>'ejercitar',21=>'jugar',22=>'jugar',23=>'leer',24=>'dormir');
@@ -31,19 +32,62 @@ $php_1[29] = array(1=>'dormir',2=>'dormir',3=>'dormir',4=>'dormir',5=>'dormir',6
 $php_1[30] = array(1=>'dormir',2=>'dormir',3=>'dormir',4=>'dormir',5=>'dormir',6=>'ducharme',7=>'desayunar',8=>'viajar',9=>'trabajar',10=>'trabajar',11=>'trabajar',12=>'trabajar',13=>'trabajar',14=>'comer',15=>'trabajar',16=>'trabajar',17=>'trabajar',18=>'trabajar',19=>'viajar',20=>'ejercitar',21=>'jugar',22=>'jugar',23=>'leer',24=>'dormir');
 $php_1[31] = array(1=>'dormir',2=>'dormir',3=>'dormir',4=>'dormir',5=>'dormir',6=>'ducharme',7=>'desayunar',8=>'viajar',9=>'trabajar',10=>'trabajar',11=>'trabajar',12=>'trabajar',13=>'trabajar',14=>'comer',15=>'trabajar',16=>'trabajar',17=>'trabajar',18=>'trabajar',19=>'viajar',20=>'ejercitar',21=>'jugar',22=>'jugar',23=>'leer',24=>'dormir');
 
-// First we map count over every first level item in the array
-// giving us the total number of tickets for each type.
-$typeTotals = array_map("count", $php_1);
+echo '..........................................................................................................................................................................................................................................................<br>';
+/*
+1.- Ordenar de mayor a menor los dias donde mas hora pude dormir
+Regla:
+- indice del arreglo: Día.
+- valor del arreglo: Cantidad de horas dormidas.
+- Cuantas horas dormi en 1 mes
+CUANTAS PALABRAS "DORMIR" HAY POR ARRAY
+*/
+echo '<h4>PROBLEMA 2: BUSCAR DATOS</h4>';
+/****************************************************************************************************************/
+echo '  Requerimiento 1:<br><br>';
+$dias_dormidos = array();
+$dormir = 0;
+$decharme = 0;
+$desayunar = 0;
+$viajar = 0;
+$trabajar = 0;
+$ejercitar = 0;
+$jugar = 0;
+$leer = 0;
+$reuniones = 'false';
 
-// print_r($typeTotals);
-// $type_totals --> Array (
-//                       [type1] => 3,
-//                       [type2] => 4,
-//                       [type3] => 1
-//                  )
+$count = count($php_1);
+foreach ($php_1 as $a => $b) {
+  $co = count($b);
+  foreach ($b as $c => $d) {
+    if($d == "dormir"){
+      $dormir++;
+    }
+  }
+array_push($dias_dormidos, $dormir);
+}
 
-//Then we sum the values of each of these
-$totalTickets = array_sum($typeTotals);
+arsort($dias_dormidos);
+print '<pre>'.print_r($dias_dormidos, TRUE).'</pre>';
+/*
+for($i=1; $i < count($php_1); $i++) {
+  foreach ($php_1[$i] as $key => $value) {
+    if($value == "dormir"){
+      $dormir++;
+    }
+  }
+  array_push($dias_dormidos, $dormir);
+}
 
-print($totalTickets);
-// $totalTickets --> 8
+arsort($dias_dormidos);
+print '<pre>'.print_r($dias_dormidos, TRUE).'</pre>';
+*/
+/****************************************************************************************************************/
+/*
+foreach ($php_1 as $type => $list) {
+echo $type." has ".count($list). " elements\n";
+}
+*/
+echo '<br>..........................................................................................................................................................................................................................................................<br>';
+//print '<pre>'.print_r($php_1, TRUE).'</pre>';
+
+?>

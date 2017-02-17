@@ -41,9 +41,8 @@ Regla:
 - Cuantas horas dormi en 1 mes
 CUANTAS PALABRAS "DORMIR" HAY POR ARRAY
 */
-
-
-echo '<h4>PROBLEMA2: BUSCAR DATOS</h4>';
+echo '<h4>PROBLEMA 2: BUSCAR DATOS</h4>';
+/****************************************************************************************************************/
 echo '  Requerimiento 1:';
 $dias_dormidos = array();
 $dormir = 0;
@@ -54,37 +53,40 @@ $trabajar = 0;
 $ejercitar = 0;
 $jugar = 0;
 $leer = 0;
-$reuniones = false;
+$reuniones = 'false';
 
 for($i=1; $i<count($php_1); $i++) {
   foreach ($php_1[$i] as $key => $value) {
-      if($value == "dormir"){ $dormir++; }
+    if($value == "dormir"){
+      $dormir++;
+    }
   }
   array_push($dias_dormidos, $dormir);
-  //echo "En el Mes durmio: ".$dormir.' horas';
 }
 arsort($dias_dormidos);
 print '<pre>'.print_r($dias_dormidos, TRUE).'</pre>';
-
+/****************************************************************************************************************/
 echo '  Requerimiento 2:<br>';
 $arr_reuniones = array();
 for($r=1; $r<count($php_1); $r++) {
   foreach ($php_1[$r] as $key => $value) {
-      if($value == "reuniones"){ $reuniones = 'true'; }else{ $reuniones = 'false';}
+    if($value == "reuniones"){ $reuniones = 'true'; }else{ $reuniones = 'false'; }
   }
   array_push($arr_reuniones, $reuniones);
-  //echo "En el Mes durmio: ".$dormir.' horas';
 }
-
 print '<pre>'.print_r($arr_reuniones, TRUE).'</pre>';
-
-echo '  Requerimiento 3:<br>';
-
-for($a=1; $a < count($php_1); $a++) {
-  foreach ($php_1[$a] as $key => $value) {
-      if($value == "trabajar"){ $trabajar++; }
+/****************************************************************************************************************/
+echo '  Requerimiento 3:<br><br>';
+$dias_trabajados = array();
+$count = count($php_1);
+foreach ($php_1 as $a => $b) {
+  $co = count($b);
+  foreach ($b as $c => $d) {
+    if($d == "trabajar"){
+      $trabajar++;
+    }
   }
-  //echo "En el Mes durmio: ".$dormir.' horas';
+
 }
 echo "Total de horas trabajadas en el mes: ".$trabajar;
 
